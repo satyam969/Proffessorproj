@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Form, Button, Container, Card } from "react-bootstrap";
 import axios from "../utils/axios";
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
- 
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,15 +27,49 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-200">
-      <div className="w-96 bg-white p-6 rounded-2xl shadow-lg">
-        <h2 className="text-center text-2xl font-bold mb-4">Login</h2>
-        <form onSubmit={handleLogin} className="flex flex-col space-y-4">
-          <input type="email" placeholder="Email" className="p-3 border rounded-md" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" className="p-3 border rounded-md" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button type="submit" className="bg-blue-600 text-white py-2 rounded-md">Login</button>
-        </form>
-      </div>
+    <div className="d-flex justify-content-center align-items-center min-vh-100" style={{ background: "linear-gradient(to right, #6a11cb, #2575fc)" }}>
+      <Container className="d-flex justify-content-center align-items-center">
+        <Card className="bg-transparent shadow-lg p-4" style={{ backdropFilter: "blur(10px)", backgroundColor: "rgba(255, 255, 255, 0.2)", borderRadius: "15px", width: "100%", maxWidth: "400px" }}>
+          <h2 className="text-center text-white mb-4">Login</h2>
+          <Form onSubmit={handleLogin}>
+            <Form.Group controlId="formBasicEmail" className="mb-3">
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="bg-transparent text-white border-white"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword" className="mb-4">
+              <Form.Control
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="bg-transparent text-white border-white"
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" className="w-100 mb-3">
+              Login
+            </Button>
+
+            <div className="text-center">
+              <p className="text-white" style={{ fontSize: "14px" }}>
+                Don't have an account?{" "}
+                <span
+                  style={{ color: "#1e90ff", cursor: "pointer" }}
+                  onClick={() => navigate("/register")}
+                >
+                  Sign up here
+                </span>
+              </p>
+            </div>
+          </Form>
+        </Card>
+      </Container>
     </div>
   );
 };
