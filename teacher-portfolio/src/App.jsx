@@ -18,9 +18,9 @@ import ManageTeaching from "./pages/admin/ManageTeaching";
 import ManageAwards from "./pages/admin/ManageAward";
 import ManageUsers from "./pages/admin/ManageUsers";
 import ManageCollaboration from "./pages/admin/ManageCollaboration";
-import Navbar from "./components/Navbar";
 import Conference from "./pages/Conference";
 import ManageConference from "./pages/admin/ManageConference";
+import ProjectsDetails from "./pages/ProjectDetails";
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/project/:id" element={<ProjectsDetails />} />
         <Route path="/research" element={<Research />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/blog" element={<Blog />} />

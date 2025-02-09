@@ -42,18 +42,15 @@ const Projects = () => {
           filteredProjects.map((project) => (
             <div key={project._id} className="col-md-6 col-lg-4 mb-4">
               <Tilt className="card shadow-lg p-3 rounded glass-card">
-                {project.imageUrl && (
-                  <img src={project.imageUrl} className="card-img-top" alt="Project" style={{ maxHeight: "200px", objectFit: "cover" }} />
-                )}
+              
                 <div className="card-body text-center">
                   <h4 className="card-title text-dark">{project.title}</h4>
                   <p className="card-text text-muted"> {project.description.split(" ").slice(0, 30).join(" ")}</p>
                   <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
                   {project.githubLink && <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-dark btn-sm me-2">GitHub</a>}
                   {project.liveDemo && <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Live Demo</a>}
-                  {project.videoUrl && (
-                    <video src={project.videoUrl} controls className="mt-3 w-100 rounded" style={{ maxHeight: "200px" }} />
-                  )}
+                
+                  <a href={`/project/${project._id}`} className="btn btn-info">More Details</a>
                 </div>
               </Tilt>
             </div>

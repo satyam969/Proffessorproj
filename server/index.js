@@ -11,6 +11,7 @@ const awardRoutes = require("./routes/awardRoutes");
 const collaborationRoutes = require("./routes/collaborationRoutes");
 const userRoutes = require("./routes/userRoutes");
 const conferenceRoutes = require("./routes/conferenceRoutes")
+const commentRoutes = require("./routes/commentsRoutes");
 
 dotenv.config();
 connectDB();
@@ -36,6 +37,7 @@ app.use("/api/awards", awardRoutes);
 app.use("/api/collaborations", collaborationRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/conferences",conferenceRoutes);
+app.use("/api/comments", commentRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
