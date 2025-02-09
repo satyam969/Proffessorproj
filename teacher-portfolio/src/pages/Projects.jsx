@@ -47,7 +47,7 @@ const Projects = () => {
                 )}
                 <div className="card-body text-center">
                   <h4 className="card-title text-dark">{project.title}</h4>
-                  <p className="card-text text-muted">{project.description}</p>
+                  <p className="card-text text-muted"> {project.description.split(" ").slice(0, 30).join(" ")}</p>
                   <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
                   {project.githubLink && <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-dark btn-sm me-2">GitHub</a>}
                   {project.liveDemo && <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Live Demo</a>}

@@ -79,9 +79,9 @@ const About = () => {
               <Card.Body>
                 <Card.Title className="fw-bold text-black">Contact Information</Card.Title>
                 <Card.Text className="text-dark">
-                  <strong>Email:</strong> prof.danish@example.com
-                  <br /><strong>LinkedIn:</strong> linkedin.com/in/prof-danish
-                  <br /><strong>Website:</strong> www.professor-danish.com
+                  <strong>Email:</strong> danish@example.com
+                  <br /><strong>LinkedIn:</strong> linkedin.com/danish
+                  <br /><strong>Website:</strong> www.danish.com
                 </Card.Text>
               </Card.Body>
             </Card>

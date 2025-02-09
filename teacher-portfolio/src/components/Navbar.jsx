@@ -57,7 +57,7 @@ const NavigationBar = () => {
           {auth && auth.role==="admin" &&<Nav.Link as={Link} to="/admin" style={{ color: "black" }}>
             Admin Panel
           </Nav.Link>}
-          {auth ?<Button  onClick={()=>{
+          {auth ?<Button onClick={()=>{
             handleLogout();
           }}>
             Logout

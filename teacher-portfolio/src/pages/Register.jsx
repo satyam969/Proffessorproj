@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "../utils/axios";
+import { Form, Button, Container, Card } from "react-bootstrap";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -26,16 +27,63 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-200">
-      <div className="w-96 bg-white p-6 rounded-2xl shadow-lg">
-        <h2 className="text-center text-2xl font-bold mb-4">Register</h2>
-        <form onSubmit={handleRegister} className="flex flex-col space-y-4">
-          <input type="text" placeholder="Full Name" className="p-3 border rounded-md" value={name} onChange={(e) => setName(e.target.value)} />
-          <input type="email" placeholder="Email" className="p-3 border rounded-md" value={email} onChange={(e) => setEmail(e.target.value)} />
-          <input type="password" placeholder="Password" className="p-3 border rounded-md" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button type="submit" className="bg-green-600 text-white py-2 rounded-md">Register</button>
-        </form>
-      </div>
+    <div
+      className="d-flex justify-content-center align-items-center vh-100"
+      style={{
+        background: "linear-gradient(to right, #6a11cb, #2575fc)",
+      }}
+    >
+      <Container>
+        <Card
+          className="mx-auto p-4 text-white"
+          style={{
+            maxWidth: "400px",
+            background: "rgba(255, 255, 255, 0.2)",
+            backdropFilter: "blur(10px)",
+            borderRadius: "20px",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+          }}
+        >
+          <Card.Body>
+            <h2 className="text-center mb-4">Register</h2>
+            <Form onSubmit={handleRegister}>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  type="text"
+                  placeholder="Full Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="bg-transparent text-white border-white"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-transparent text-white border-white"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="bg-transparent text-white border-white"
+                />
+              </Form.Group>
+              <Button
+                type="submit"
+                className="w-100 bg-white text-dark fw-bold border-0"
+              >
+                Register
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
+      </Container>
     </div>
   );
 };
