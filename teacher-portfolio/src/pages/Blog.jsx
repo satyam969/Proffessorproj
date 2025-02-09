@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Container, Card, Row, Col, Form } from "react-bootstrap";
 import NavigationBar from "../components/Navbar";
+import Tilt from 'react-parallax-tilt'
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -41,9 +42,9 @@ const Blog = () => {
             )
             .map((post) => (
               <Col md={6} lg={4} key={post._id} className="mb-4">
-                <Card className="shadow-sm glass-card">
+                <Tilt className="shadow-sm glass-card">
                   {post.imageUrl && (
-                    <Card.Img variant="top" src={post.imageUrl} alt="Blog Post" />
+                    <Card.Img variant="top" height={'60%'} width={"60%"} src={post.imageUrl} alt="Blog Post" />
                   )}
                   <Card.Body>
                     <Card.Title>{post.title}</Card.Title>
@@ -55,7 +56,7 @@ const Blog = () => {
                       <video src={post.videoUrl} className="w-100 mt-2" controls />
                     )}
                   </Card.Body>
-                </Card>
+                </Tilt>
               </Col>
             ))}
         </Row>
