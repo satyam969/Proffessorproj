@@ -41,7 +41,7 @@ const Research = () => {
           <p className=" text-white">No research papers found.</p>
         ) : (
           filteredPapers.map((paper) => (
-            <div key={paper._id} className="">
+            <div key={paper._id} className="m-2">
               <Tilt className="card shadow-lg p-3 rounded glass-card ">
                 <Card.Body>
                   <Card.Title className="text-dark">{paper.title}</Card.Title>
@@ -56,19 +56,17 @@ const Research = () => {
                       <strong>Publication Date:</strong>{" "}
                       {new Date(paper.publicationDate).toDateString()}
                     </ListGroup.Item>
-                    <ListGroup.Item>
-                      <strong>Created At:</strong>{" "}
-                      {new Date(paper.createdAt).toDateString()}
-                    </ListGroup.Item>
                   </ListGroup>
-                  <Button
+                  <div className="d-flex justify-content-center"><Button
                     href={paper.pdfUrl}
                     target="_blank"
                     variant="primary"
                     className="mt-3"
+                    
                   >
                     View Paper
-                  </Button>
+                  </Button></div>
+                  
                 </Card.Body>
               </Tilt>
             </div>

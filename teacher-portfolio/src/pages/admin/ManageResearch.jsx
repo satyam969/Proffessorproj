@@ -112,7 +112,7 @@ const ManageResearch = () => {
                 </Table>
             </div>
 
-            {/* Modal */}
+        
             <Modal show={showModal} onHide={() => setShowModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>{selectedResearch ? "Edit Research" : "Add Research"}</Modal.Title>

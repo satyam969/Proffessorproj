@@ -55,6 +55,9 @@ const AdminPanel = () => {
             <ListGroup.Item action as={Link} to="users" className="bg-dark text-white">
               Manage Users
             </ListGroup.Item>
+            <ListGroup.Item action as={Link} to="/" className="bg-dark text-white">
+              Home
+            </ListGroup.Item>
           </ListGroup>
         </Col>
 
