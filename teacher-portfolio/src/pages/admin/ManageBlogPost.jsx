@@ -12,6 +12,9 @@ const ManageBlogPost = () => {
         image: null,
         video: null
     });
+    const [editedId,seteditedid]=useState(null);
+
+    const [editingProject, setEditingProject] = useState(null);
 
     const URL = import.meta.env.VITE_URL;
 
@@ -47,9 +50,16 @@ const ManageBlogPost = () => {
         if (formData.video) data.append("video", formData.video);
 
         try {
+            if (editingProject) {
+                await axios.put(`${URL}/api/blogs/${editingProject._id}`, data,{
+                    headers: { "Content-Type": "multipart/form-data" },
+                });
+            }
+            else{
             await axios.post(`${URL}/api/blogs`, data, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
+        }
             fetchBlogPosts();
             setFormData({ title: "", content: "", author: "", tags: "", image: null, video: null });
         } catch (error) {
@@ -65,6 +75,19 @@ const ManageBlogPost = () => {
             console.error("Error deleting blog post:", error);
         }
     };
+
+    const handleEdit = (project) => {
+        setEditingProject(project);
+        setFormData({
+          content: project.content,
+          author: project.author,
+          title: project.title,
+          tags: project.tags,
+          image: null,
+          video: null,
+        });
+
+      };
 
     return (
         <Container className="mt-4">
@@ -108,8 +131,9 @@ const ManageBlogPost = () => {
                                 <Card.Title>{post.title}</Card.Title>
                                 <Card.Text>{post.content}</Card.Text>
                                 <small className="text-muted">By {post.author} | Tags: {post.tags}</small>
-                                {post.imageUrl && <Card.Img variant="top" src={post.imageUrl} alt="Blog Post" className="mt-2" />}
-                                {post.videoUrl && <video src={post.videoUrl} className="w-100 mt-2" controls />}
+                                {post.imageUrl && <Card.Img variant="top" src={post.imageUrl} alt="Blog Post"  className="mt-2" />}
+                                {post.videoUrl && <video src={post.videoUrl} className=" w-100 mt-2" controls />}
+                                <Button variant="primary" className="mt-2 w-100" onClick={() => handleEdit(post)}>Edit</Button>
                                 <Button variant="danger" className="mt-2 w-100" onClick={() => handleDelete(post._id)}>Delete</Button>
                             </Card.Body>
                         </Card>
