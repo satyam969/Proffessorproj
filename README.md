@@ -13,6 +13,7 @@ This is a dynamic and user-friendly portfolio website for a professor, built usi
 - **Search & Filtering**: Helps visitors find specific research papers, projects, or blog posts easily.
 - **Dynamic UI**: Built with React for an interactive and seamless user experience.
 - **Responsive Design**: Optimized for all devices.
+- **React-parallax-Tilt For 3D  
 
 ## Technologies Used
 - **Frontend**: React.js,react-bootstrap
