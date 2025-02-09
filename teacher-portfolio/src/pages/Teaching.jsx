@@ -41,57 +41,7 @@ const Teaching = () => {
         ))}
       </div>
 
-      <style>
-        {`
-          .teaching-page {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            padding-bottom: 50px;
-          }
-
-          @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-
-          .glass-card {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            border: none;
-            margin: 10px;
-          }
-
-          .title {
-            color: #fff;
-            font-family: 'Roboto', sans-serif;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-          }
-
-          .card-title {
-            font-size: 1.5rem;
-          }
-
-          .card-subtitle {
-            font-size: 1.1rem;
-          }
-
-          .card:hover {
-            transform: translateY(-10px);
-            transition: transform 0.3s ease;
-          }
-        `}
-      </style>
+    
     </div>
   );
 };

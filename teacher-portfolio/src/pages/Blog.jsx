@@ -35,7 +35,9 @@ const Blog = () => {
         <Row>
           {posts
             .filter((post) =>
-              post.title.toLowerCase().includes(search.toLowerCase())
+              post.title.toLowerCase().includes(search.toLowerCase()) ||
+             post.content.toLowerCase().includes(search.toLowerCase()) ||
+              post.tags.some((tag) => tag.toLowerCase().includes(search.toLowerCase()))
             )
             .map((post) => (
               <Col md={6} lg={4} key={post._id} className="mb-4">
