@@ -44,7 +44,7 @@ const createProject = async (req, res) => {
 const getProjects = async (req, res) => {
     try {
         const projects = await Project.find();
-        res.json(projects);
+        res.status(200).json(projects);
     } catch (error) {
         res.status(500).json({ message: "Server Error" });
     }
@@ -60,6 +60,9 @@ const getProjectById = async (req, res) => {
         res.status(500).json({ message: "Server Error" });
     }
 };
+
+
+
 
 const updateProject = async (req, res) => {
     try {

@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
             name: user.name,
             email: user.email,
             role: user.role,
-            token: generateToken(user.id),
+            token: generateToken(user._id),
         });
     } else {
         res.status(400).json({ message: "Invalid user data" });
@@ -46,11 +46,11 @@ const loginUser = async (req, res) => {
 
     if (user && (await bcrypt.compare(password, user.password))) {
         res.json({
-            _id: user.id,
+            _id: user._id,
             name: user.name,
             email: user.email,
             role: user.role,
-            token: generateToken(user.id),
+            token: generateToken(user._id),
         });
     } else {
         res.status(401).json({ message: "Invalid email or password" });
@@ -58,11 +58,11 @@ const loginUser = async (req, res) => {
 };
 
 const getUserProfile = async (req, res) => {
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.user._id);
 
     if (user) {
         res.json({
-            _id: user.id,
+            _id: user._id,
             name: user.name,
             email: user.email,
             role: user.role,
@@ -86,11 +86,11 @@ const updateUserProfile = async (req, res) => {
 
         const updatedUser = await user.save();
         res.json({
-            _id: updatedUser.id,
+            _id: updatedUser._id,
             name: updatedUser.name,
             email: updatedUser.email,
             role: updatedUser.role,
-            token: generateToken(updatedUser.id),
+            token: generateToken(updatedUser._id),
         });
     } else {
         res.status(404).json({ message: "User not found" });

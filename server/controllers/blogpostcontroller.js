@@ -23,6 +23,8 @@ const createBlogPost = async (req, res) => {
             videoUrl = videoResult.secure_url;
         }
 
+        console.log(imageUrl, videoUrl);
+
         const blogPost = await BlogPost.create({
             title,
             content,
@@ -31,6 +33,8 @@ const createBlogPost = async (req, res) => {
             imageUrl,
             videoUrl,
         });
+
+        console.log(blogPost);
 
         res.status(201).json(blogPost);
     } catch (error) {

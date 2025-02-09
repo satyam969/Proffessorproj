@@ -1,0 +1,66 @@
+import { useEffect, useState } from "react";
+import axios from "../utils/axios";
+import Tilt from "react-parallax-tilt";
+
+const Projects = () => {
+  const [projects, setProjects] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const res = await axios.get("/api/projects");
+        setProjects(res.data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    };
+    fetchProjects();
+  }, []);
+
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(search.toLowerCase()) ||
+    project.description.toLowerCase().includes(search.toLowerCase()) ||
+    project.technologies.some((tech) => tech.toLowerCase().includes(search.toLowerCase()))
+  );
+
+  return (
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Projects</h2>
+      <input
+        type="text"
+        placeholder="Search Projects..."
+        className="form-control my-3"
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <div className="row">
+        {filteredProjects.length === 0 ? (
+          <p className="text-center">No projects found.</p>
+        ) : (
+          filteredProjects.map((project) => (
+            <div key={project._id} className="col-md-6 col-lg-4 mb-4">
+              <Tilt className="card shadow-lg p-3 rounded" style={{ background: "#f8f9fa" }}>
+                {project.imageUrl && (
+                  <img src={project.imageUrl} className="card-img-top" alt="Project" style={{ maxHeight: "200px", objectFit: "cover" }} />
+                )}
+                <div className="card-body text-center">
+                  <h4 className="card-title">{project.title}</h4>
+                  <p className="card-text text-muted">{project.description}</p>
+                  <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
+                  {project.githubLink && <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-dark btn-sm me-2">GitHub</a>}
+                  {project.liveDemo && <a href={project.liveDemo} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">Live Demo</a>}
+                  {project.videoUrl && (
+                    <video src={project.videoUrl} controls className="mt-3 w-100 rounded" style={{ maxHeight: "200px" }} />
+                  )}
+                 
+                </div>
+              </Tilt>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Projects;
