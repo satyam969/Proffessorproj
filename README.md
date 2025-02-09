@@ -24,10 +24,10 @@ This is a dynamic and user-friendly portfolio website for a professor, built usi
 - Projects Page:-
 - ![image](https://github.com/user-attachments/assets/9ce15522-4345-495b-90a1-29e57560ca75)
 
--Comments,Replies Feature
+- Interface
 - ![image](https://github.com/user-attachments/assets/a260f591-df3e-4fea-9b8a-e124573622fd)
 
--Interface
+- Comments,Replies Feature
 ![image](https://github.com/user-attachments/assets/e1f37e0e-516d-41f2-bc23-de6eb9463dc9)
 
 - 
