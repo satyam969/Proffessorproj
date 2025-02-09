@@ -15,12 +15,18 @@ This is a dynamic and user-friendly portfolio website for a professor, built usi
 - **Responsive Design**: Optimized for all devices.
 
 ## Technologies Used
-- **Frontend**: React.js, Tailwind CSS
+- **Frontend**: React.js,react-bootstrap
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT
-- **State Management**: Redux (if used)
 - **Storage**: Cloudinary for media uploads
+
+- ![image](https://github.com/user-attachments/assets/a260f591-df3e-4fea-9b8a-e124573622fd)
+
+
+![image](https://github.com/user-attachments/assets/e1f37e0e-516d-41f2-bc23-de6eb9463dc9)
+
+- 
 
 ## Installation & Setup
 ### Prerequisites
