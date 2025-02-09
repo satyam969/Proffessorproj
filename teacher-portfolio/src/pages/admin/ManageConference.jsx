@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Table, Button, Modal, Form, Container } from "react-bootstrap";
 
-const API_URL = "http://localhost:5000/api/conferences";
+const URL = import.meta.env.VITE_URL;
+const API_URL = `${URL}/api/conferences`;
 
 const ManageConference = () => {
     const [conferences, setConferences] = useState([]);
