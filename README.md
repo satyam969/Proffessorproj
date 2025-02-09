@@ -41,8 +41,7 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/your-repository/professor-portfolio.git
-cd professor-portfolio
+git clone [https://github.com/your-repository/professor-portfolio.git](https://github.com/satyam969/Proffessorproj)
 ```
 
 ### Install Dependencies
