@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Container, Card, Row, Col, Form } from "react-bootstrap";
+import NavigationBar from "../components/Navbar";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
@@ -22,6 +23,7 @@ const Blog = () => {
 
   return (
     <div className="blog-page">
+      <NavigationBar />
       <Container className="mt-5">
         <h2 className="text-center title">Blog</h2>
         <Form.Control

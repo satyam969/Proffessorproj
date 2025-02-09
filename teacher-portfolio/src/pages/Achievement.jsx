@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { FaTrophy } from "react-icons/fa";
+import NavigationBar from "../components/Navbar";
 
 const Achievements = () => {
   const [achievements, setAchievements] = useState([]);
@@ -21,6 +22,7 @@ const Achievements = () => {
 
   return (
     <div className="achievements-page">
+      <NavigationBar />
       <Container className="mt-5">
         <h2 className="text-center mb-4 title">Achievements</h2>
         <Row className="g-4">

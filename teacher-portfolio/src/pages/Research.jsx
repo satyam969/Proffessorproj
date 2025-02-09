@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Card, ListGroup, Button } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
+import NavigationBar from "../components/Navbar";
 
 const Research = () => {
   const [papers, setPapers] = useState([]);
@@ -27,6 +28,7 @@ const Research = () => {
 
   return (
     <div className="research-page">
+      <NavigationBar />
       <h2 className="text-center mb-4 title">Research Papers</h2>
       <input
         type="text"

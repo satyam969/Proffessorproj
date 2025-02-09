@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
+import NavigationBar from "../components/Navbar";
 
 const Awards = () => {
   const [awards, setAwards] = useState([]);
@@ -22,6 +23,7 @@ const Awards = () => {
 
   return (
     <div className="awards-page">
+      <NavigationBar />
       <div className="container mt-5">
         <h2 className="text-center mb-4 title">Awards & Collaborations</h2>
 

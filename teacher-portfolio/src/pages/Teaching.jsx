@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import { Card, ListGroup } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
+import NavigationBar from "../components/Navbar";
 
 const Teaching = () => {
   const [courses, setCourses] = useState([]);
@@ -20,6 +21,7 @@ const Teaching = () => {
 
   return (
     <div className="teaching-page">
+      <NavigationBar />
       <h2 className="text-center mb-4 title">Teaching Experience</h2>
       <div className="row">
         {courses.map((course) => (

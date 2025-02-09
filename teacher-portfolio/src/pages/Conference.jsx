@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container, Card, Row, Col, Badge } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
+import NavigationBar from "../components/Navbar";
 const URL=import.meta.env.VITE_URL;
 const API_URL = `${URL}/api/conferences`;
 
@@ -28,6 +29,7 @@ const ConferencePage = () => {
 
     return (
         <div className="conference-page">
+            <NavigationBar />
             <h2 className="text-center mb-4 title">Conferences</h2>
             <Row>
                 {conferences.map((conference) => (

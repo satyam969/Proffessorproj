@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "../utils/axios";
 import Tilt from "react-parallax-tilt";
+import NavigationBar from "../components/Navbar";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -26,6 +27,7 @@ const Projects = () => {
 
   return (
     <div className="projects-page">
+      <NavigationBar />
       <h2 className="text-center mb-4 title">Projects</h2>
       <input
         type="text"
