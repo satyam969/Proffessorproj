@@ -27,7 +27,7 @@ const AdminPanel = () => {
   return (
     <Container fluid>
       <Row>
-        {/* Sidebar */}
+       
         <Col md={3} lg={2} className="bg-dark text-white p-3 min-vh-100">
           <h3 className="text-center mb-4">Admin Panel</h3>
           <ListGroup variant="flush">
