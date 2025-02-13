@@ -3,11 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Form, Button, Container, Card } from "react-bootstrap";
 import axios from "../utils/axios";
+import { useAuth } from "../context/userContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+    const{setAuth}=useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ const Login = () => {
       const res = await axios.post("/api/users/login", { email, password });
       toast.success("Login successful!");
       localStorage.setItem("auth", JSON.stringify(res?.data));
+      setAuth(res?.data)
       navigate("/");
     } catch (error) {
       toast.error("Login failed!");
