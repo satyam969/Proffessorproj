@@ -101,7 +101,7 @@ Similar CRUD endpoints exist for research papers, conferences, blog posts, and a
 
 ## Deployment
 The project is deployed at:
-🔗 **[Live Site](https://proffessorproj-2.onrender.com/)**
+🔗 **[Live Site](https://proffessorproj.vercel.app/)**
 
 ## Future Enhancements
 - Add user authentication for restricted content access
