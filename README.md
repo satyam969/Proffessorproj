@@ -2,7 +2,7 @@
 
 ## Deployment
 The project is deployed at:
-🔗 **[Live Site](https://proffessorproj-git-frontend-priya-rajs-projects-52cd4eb0.vercel.app/conference)**
+🔗 **[Live Site](https://proffessorproj-git-frontend-priya-rajs-projects-52cd4eb0.vercel.app/)**
 
 ## Overview
 This is a dynamic and user-friendly portfolio website for a professor, built using the MERN (MongoDB, Express.js, React, Node.js) stack. The platform allows the professor to showcase their projects, research papers, conferences, achievements, and blog posts. Additional sections such as about, teaching experience, awards, and collaborations are included.To Reduce Students Burden Anonymous Comments,replies is added, the professors can also upload the pdf of the research papaers they have ..,Admin Panel Implementation, The website is fully responsive and features a modern UI.
